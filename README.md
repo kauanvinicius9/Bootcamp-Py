@@ -14,21 +14,21 @@ An API developed with `FastAPI` that returns information based on names via the 
 
 ###
 
-1️⃣- Clone the repository:
+- Clone the repository:
 
 ###
 ```powershell
 git clone https://github.com/kauanvinicius9/Projects.git
 ```
 
-2️⃣- Enter the cloned repository:
+- Enter the cloned repository:
 
 ###
 ```powershell
 cd Projects
 ```
 
-3️⃣- Create and activate the Virtual Environment `env`:
+- Create and activate the Virtual Environment `env`:
 
 ###
 
@@ -59,7 +59,7 @@ python3 -m venv env
 source env/bin/activate
 ```
 
-4️⃣- Install the dependencies:
+- Install the dependencies:
 
 ###
 ```powershell

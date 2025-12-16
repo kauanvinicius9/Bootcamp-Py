@@ -1,10 +1,13 @@
+# Importes
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from typing import Optional
 from pydantic import BaseModel
 
+# Inicialização
 app = FastAPI()
 
+# Lista de produtos para CRUD
 PRODUCTS = [
     {
         'id': 1,
@@ -29,18 +32,19 @@ PRODUCTS = [
     }
 ]
 
+# Produtos tipados
 class Productt(BaseModel):
     name: str
     description: Optional[str] = None
     price: float
     available: Optional[bool] = True
 
-
+# Método GET
 @app.get('/products', tags=['products'])
 def list_products() -> list:
     return PRODUCTS
 
-
+# Método GET
 @app.get('/products/available', tags=['products'])
 def list_available_products() -> list:
     available_products = []
@@ -49,7 +53,7 @@ def list_available_products() -> list:
             available_products.append(product)
     return available_products
 
-
+# Método GET
 @app.get('/products/{product_id}', tags=['products'])
 def obtain_products(product_id: int) -> dict:
     for prod in PRODUCTS:
@@ -57,7 +61,7 @@ def obtain_products(product_id: int) -> dict:
             return prod
     return{}
 
-
+# Método POST
 @app.post('/products', tags=['products'])
 def create_products(product: Productt) -> dict:
     product = product.dict()
@@ -65,7 +69,7 @@ def create_products(product: Productt) -> dict:
     PRODUCTS.append(product)
     return product
 
-
+# Método PUT
 @app.put('/products/{product_id}', tags=['products'])
 def upload_products(product_id: int, product: Productt) -> dict:
     for index, prdt in enumerate(PRODUCTS):
@@ -74,7 +78,7 @@ def upload_products(product_id: int, product: Productt) -> dict:
             return product
     return{}
 
-
+# Método DELETE
 @app.delete('/products/{product_id}', tags=['products'])
 def remove_products(product_id: int) -> dict:
     for index, prdt in enumerate(PRODUCTS):
@@ -82,6 +86,3 @@ def remove_products(product_id: int) -> dict:
             PRODUCTS.pop(index)
             return {'message': "This product has been successfully removed."}
     return{}
-
-
-
