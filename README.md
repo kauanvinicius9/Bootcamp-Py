@@ -18,7 +18,7 @@ An API developed with `FastAPI` that returns information based on names via the 
 
 ###
 ```powershell
-git clone https://github.com/Kauan19-hub/Projects.git
+git clone https://github.com/kauanvinicius9/Projects.git
 ```
 
 2️⃣- Enter the cloned repository:
