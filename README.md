@@ -14,13 +14,6 @@ An API developed with `FastAPI` that returns information based on names via the 
 
 ###
 
-- Clone the repository:
-
-###
-```powershell
-git clone https://github.com/kauanvinicius9/Projects.git
-```
-
 - Enter the cloned repository:
 
 ###
@@ -92,7 +85,7 @@ http://127.0.0.1:8000/name
 
 ###
 ```powershell
-cd https://github.com/Kauan19-hub/Bootcamp.Py
+cd https://github.com/kauanvinicius9/Bootcamp.Py
 ```
 
 ###
